@@ -1,18 +1,22 @@
 name: test01
-type: php
-php_version: '8.4'
+type: laravel
+docroot: public
+php_version: "8.4"
+# webserver_type: nginx-fpm
 webserver_type: apache-fpm
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
 database:
-    type: mariadb
-    version: "10.11"
-use_dns_when_possible: true
+  type: mariadb
+  version: "10.11"
+use_dns_when_possible: false
 composer_version: "2"
 web_environment: []
 corepack_enable: false
 default_container_timeout: "240"
+webimage_extra_packages:
+  - php-intl
 
 # Key features of DDEV's config.yaml:
 
@@ -23,7 +27,7 @@ default_container_timeout: "240"
 # See https://ddev.readthedocs.io/en/stable/users/quickstart/ for more
 # information on the different project types
 
-docroot: './src' # Relative path to the directory containing index.php.
+# docroot: <relative_path> # Relative path to the directory containing index.php.
 
 # php_version: "8.3"  # PHP version to use, "5.6" through "8.4"
 
@@ -164,7 +168,7 @@ docroot: './src' # Relative path to the directory containing index.php.
 # This is not used by most people, most people use the *router* instead
 # of the localhost port.
 
-host_db_port: 60000
+# host_db_port: "59002"
 # The host port binding for the ddev-dbserver can be explicitly specified. It is dynamic
 # unless explicitly specified.
 

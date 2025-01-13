@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+    display: grid;
+    grid-template-rows: auto 1fr 200px;
+    min-height: 100vh;
+}
+
+footer {
+    display: flex;
+    height: 100%;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    background-color: #fff;
+    justify-content: center;
+
+    .footer-content {
+        display: flex;
+        max-width: 60em;
+        width: 100%;
+    }
+}
