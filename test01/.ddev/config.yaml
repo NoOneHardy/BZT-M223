@@ -17,6 +17,7 @@ corepack_enable: false
 default_container_timeout: "240"
 webimage_extra_packages:
   - php-intl
+host_db_port: 60000
 
 # Key features of DDEV's config.yaml:
 

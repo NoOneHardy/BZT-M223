@@ -6,3 +6,28 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+.car-list-container {
+    h1, > a {
+        margin-bottom: 1em;
+    }
+
+    form {
+        display: inline;
+    }
+}
+
+.car-create-container, .car-list-container, .car-edit-container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.car-edit-container, .car-create-container {
+    .actions {
+        margin-top: 1em;
+    }
+}

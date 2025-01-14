@@ -3,21 +3,103 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Car;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder
-{
+class DatabaseSeeder extends Seeder {
     /**
      * Seed the application's database.
      */
-    public function run(): void
-    {
+    public function run(): void {
         // User::factory(10)->create();
 
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        Car::factory()->create([
+            'name' => 'Model S',
+            'brand' => 'Tesla',
+            'price' => 79999.99,
+            'fuel_type' => 'Electric',
+            'color' => 1,
+            'type' => 'Sedan',
+            'tank' => 100.0,
+            'manufacturing_date' => '2023-06-01',
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
+            'is_active' => true,
+        ]);
+        Car::factory()->create([
+            'name' => 'Mustang',
+            'brand' => 'Ford',
+            'price' => 55999.99,
+            'fuel_type' => 'Gasoline',
+            'color' => 2,
+            'type' => 'Coupe',
+            'tank' => 60.0,
+            'manufacturing_date' => '2022-08-15',
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
+            'is_active' => true,
+        ]);
+        Car::factory()->create([
+            'name' => 'Civic',
+            'brand' => 'Honda',
+            'price' => 25999.99,
+            'fuel_type' => 'Hybrid',
+            'color' => 3,
+            'type' => 'Sedan',
+            'tank' => 50.0,
+            'manufacturing_date' => '2021-11-20',
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
+            'is_active' => true,
+        ]);
+
+        DB::table('customer')->insert(array([
+            'name' => 'Lüthi',
+            'first_name' => 'Silvan',
+            'address' => 'Irgendwo im Nirgendwo',
+            'zip' => '1234',
+            'city' => 'Nirgendwo',
+            'created_at' => now(),
+            'updated_at' => now(),
+            'is_active' => true
+        ], [
+            'name' => 'Hardegger',
+            'first_name' => 'Silas',
+            'address' => 'Bsetziweg 10a',
+            'zip' => '8500',
+            'city' => 'Frauenfeld',
+            'created_at' => now(),
+            'updated_at' => now(),
+            'is_active' => true
+        ]));
+
+        DB::table('reservation')->insert(array([
+            'customer_id' => 2,
+            'car_id' => 3,
+            'start_date' => now(),
+            'end_date' => date_create('2025-01-31'),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'is_active' => true
+        ], [
+            'customer_id' => 1,
+            'car_id' => 1,
+            'start_date' => now(),
+            'end_date' => date_create('2025-01-31'),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'is_active' => true
+        ]));
     }
 }
