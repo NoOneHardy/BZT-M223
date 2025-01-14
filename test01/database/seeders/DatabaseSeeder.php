@@ -2,10 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use App\Models\Car;
-
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,13 +11,6 @@ class DatabaseSeeder extends Seeder {
      * Seed the application's database.
      */
     public function run(): void {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-
         Car::factory()->create([
             'name' => 'Model S',
             'brand' => 'Tesla',
@@ -101,5 +91,8 @@ class DatabaseSeeder extends Seeder {
             'updated_at' => now(),
             'is_active' => true
         ]));
+
+        $this->call(PermissionSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }
