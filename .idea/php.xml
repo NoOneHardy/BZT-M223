@@ -124,6 +124,9 @@
       <path value="$PROJECT_DIR$/test01/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/test01/vendor/league/config" />
       <path value="$PROJECT_DIR$/test01/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/test01/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/test01/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/test01/vendor/spatie/laravel-permission" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

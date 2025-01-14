@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder {
         Car::factory()->create([
             'name' => 'Model S',
             'brand' => 'Tesla',
-            'price' => 79999.99,
+            'price' => 75.00,
             'fuel_type' => 'Electric',
             'color' => 1,
             'type' => 'Sedan',
@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder {
         Car::factory()->create([
             'name' => 'Mustang',
             'brand' => 'Ford',
-            'price' => 55999.99,
+            'price' => 70.00,
             'fuel_type' => 'Gasoline',
             'color' => 2,
             'type' => 'Coupe',
@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder {
         Car::factory()->create([
             'name' => 'Civic',
             'brand' => 'Honda',
-            'price' => 25999.99,
+            'price' => 50.00,
             'fuel_type' => 'Hybrid',
             'color' => 3,
             'type' => 'Sedan',

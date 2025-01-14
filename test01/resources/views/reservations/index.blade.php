@@ -8,7 +8,8 @@
             <thead>
             <tr>
                 <th>Name</th>
-                <th>Price</th>
+                <th>Price per Day</th>
+                <th>Price Total</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Start</th>
@@ -20,7 +21,8 @@
             @foreach($reservations as $reservation)
                 <tr>
                     <td>{{$reservation->car_name}}</td>
-                    <td>{{$reservation->price * 2}}</td>
+                    <td>CHF {{$reservation->price}}</td>
+                    <td>CHF {{$reservation->total}}</td>
                     <td>{{$reservation->name}}</td>
                     <td>{{$reservation->first_name}}</td>
                     <td>{{$reservation->start_date}}</td>
