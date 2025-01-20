@@ -90,6 +90,14 @@ class DatabaseSeeder extends Seeder {
             'created_at' => now(),
             'updated_at' => now(),
             'is_active' => true
+        ], [
+            'customer_id' => 1,
+            'car_id' => 1,
+            'start_date' => date_create('2025-01-25'),
+            'end_date' => date_create('2025-01-31'),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'is_active' => true
         ]));
 
         $this->call(PermissionSeeder::class);
