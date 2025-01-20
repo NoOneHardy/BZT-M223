@@ -6,6 +6,10 @@
         <form action="{{route('cars.store')}}" method="POST">
             @csrf
             <div class="form-group">
+                <label for="brand">Brand</label>
+                <input type="text" name="brand" id="brand" class="form-control" required>
+            </div>
+            <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" class="form-control" required>
             </div>

@@ -3,7 +3,7 @@
 @section('content')
     <div class="car-list-container container">
         <h1>Cars</h1>
-        @can('car-create')
+        @can('create-cars')
             <a href="{{route('cars.create')}}" class="btn btn-primary">Add New Car</a>
         @endcan
         <table class="car-list table">

@@ -31,3 +31,22 @@
         margin-top: 1em;
     }
 }
+
+.car-rent-list-container {
+    > form {
+        display: flex;
+        gap: 1em;
+        flex-wrap: wrap;
+        margin-bottom: 1.5em;
+        max-width: 32em;
+        width: 100%;
+
+        button {
+            width: 100%;
+        }
+
+        .form-group {
+            width: calc(50% - .5em);
+        }
+    }
+}

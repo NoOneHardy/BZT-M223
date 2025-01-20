@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('brand');
             $table->float('price');
             $table->string('fuel_type');
-            $table->integer('color');
-            $table->string('type');
-            $table->float('tank');
-            $table->date('manufacturing_date');
+            $table->integer('color')->nullable();
+            $table->string('type')->nullable();
+            $table->float('tank')->nullable();
+            $table->date('manufacturing_date')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->boolean('is_active')->default(true);
@@ -30,9 +30,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('first_name');
-            $table->string('address');
-            $table->integer('zip');
-            $table->string('city');
+            $table->string('address')->nullable();
+            $table->integer('zip')->nullable();
+            $table->string('city')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->boolean('is_active')->default(true);
