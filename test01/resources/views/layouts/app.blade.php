@@ -40,6 +40,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('reservations.index')}}">Reservations</a>
                         </li>
+                        @can('view-rents')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('rent.index')}}">Rent a car</a>
+                            </li>
+                        @endcan()
                     @endauth
                 </ul>
 

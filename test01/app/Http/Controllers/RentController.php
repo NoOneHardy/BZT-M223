@@ -2,17 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use Carbon\Carbon;
+use Illuminate\Foundation\Application;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\Factory;
+use Illuminate\View\View;
 
 class RentController extends Controller {
-    public function index() {
+    public function __construct() {
+        $this->middleware('auth');
+        $this->middleware('permission:view-rents', ['only' => ['index', 'rent']]);
+    }
+
+    public function index(): View|Application|Factory {
         $now = Carbon::now();
         $fourDays = $now->copy()->addDays(4);
 
         $cars = DB::table('reservation as r')
             ->join('car as c', 'c.id', '=', 'r.car_id')
-            ->select('c.brand', 'c.name', 'c.price', 'c.fuel_type')
+            ->select('c.id', 'c.brand', 'c.name', 'c.price', 'c.fuel_type')
             ->whereNotIn('r.id', function ($query) use ($now, $fourDays) {
                 $query->select('r2.id')
                     ->from('reservation as r2')
@@ -30,5 +40,11 @@ class RentController extends Controller {
             ->get();
 
         return view('rent.index', compact('cars'));
+    }
+
+    public function rent(Request $request, Car $car) {
+
+
+        return redirect()->route('rent.index');
     }
 }

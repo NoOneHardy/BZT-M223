@@ -24,9 +24,10 @@ class PermissionSeeder extends Seeder {
         $viewCars = Permission::findOrCreate('view-cars');
         $deleteCars = Permission::findOrCreate('delete-cars');
         $createCars = Permission::findOrCreate('create-cars');
+        $viewRents = Permission::findOrCreate('view-rents');
 
         $admin->givePermissionTo(Permission::all());
-        $user->givePermissionTo($viewCars);
-        $sales->givePermissionTo($viewCars, $editCars);
+        $user->givePermissionTo($viewCars, $viewRents);
+        $sales->givePermissionTo($viewCars, $editCars, $viewRents);
     }
 }

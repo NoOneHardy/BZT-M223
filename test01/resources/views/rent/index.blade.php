@@ -20,6 +20,13 @@
                     <td>{{$car->name}}</td>
                     <td>{{$car->price}}</td>
                     <td>{{$car->fuel_type}}</td>
+                    <td>
+                        <form action="{{url("/rent/$car->id/rent")}}" method="POST">
+                            @csrf
+                            @method('POST')
+                            <button type="submit" class="btn btn-primary">Rent</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

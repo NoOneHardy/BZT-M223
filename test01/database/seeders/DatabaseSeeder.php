@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder {
      * Seed the application's database.
      */
     public function run(): void {
+        $this->call(CustomerSeeder::class);
+
         Car::factory()->create([
             'name' => 'Model S',
             'brand' => 'Tesla',
@@ -54,26 +56,6 @@ class DatabaseSeeder extends Seeder {
             'is_active' => true,
         ]);
 
-        DB::table('customer')->insert(array([
-            'name' => 'Lüthi',
-            'first_name' => 'Silvan',
-            'address' => 'Irgendwo im Nirgendwo',
-            'zip' => '1234',
-            'city' => 'Nirgendwo',
-            'created_at' => now(),
-            'updated_at' => now(),
-            'is_active' => true
-        ], [
-            'name' => 'Hardegger',
-            'first_name' => 'Silas',
-            'address' => 'Bsetziweg 10a',
-            'zip' => '8500',
-            'city' => 'Frauenfeld',
-            'created_at' => now(),
-            'updated_at' => now(),
-            'is_active' => true
-        ]));
-
         DB::table('reservation')->insert(array([
             'customer_id' => 2,
             'car_id' => 3,
@@ -83,7 +65,7 @@ class DatabaseSeeder extends Seeder {
             'updated_at' => now(),
             'is_active' => true
         ], [
-            'customer_id' => 1,
+            'customer_id' => 3,
             'car_id' => 1,
             'start_date' => now(),
             'end_date' => date_create('2025-01-31'),
@@ -91,7 +73,7 @@ class DatabaseSeeder extends Seeder {
             'updated_at' => now(),
             'is_active' => true
         ], [
-            'customer_id' => 1,
+            'customer_id' => 2,
             'car_id' => 1,
             'start_date' => date_create('2025-01-25'),
             'end_date' => date_create('2025-01-31'),
